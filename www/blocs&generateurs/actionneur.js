@@ -690,6 +690,30 @@ Blockly.Arduino["pixel_init"]=function(block){
     Blockly.Arduino.setups_["pixel_show"]="pixel.show();";	
     return ""
 };
+
+Blockly.Blocks['neopixel_through_hole_led'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("https://cdn.rasel.cz/images/0/cbe56e30e1dc82d4/2/neopixel-rgb-led-8mm.jpg", 100, 100, { alt: "*", flipRtl: "FALSE" }));
+    this.appendValueInput("PIN")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("PIN");
+    this.appendValueInput("Number of LED")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Number of LED");
+    this.appendValueInput("color")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("color")
+        .appendField(new Blockly.FieldColour("#ff0000"), "NAME");
+    this.setInputsInline(false);
+    this.setColour(260);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 Blockly.Python["pixel_init"]=function(block){
     var pin=Blockly.Python.valueToCode(block, "broche", Blockly.Python.ORDER_ASSIGNMENT);
 	var number=Blockly.Python.valueToCode(block, "num", Blockly.Python.ORDER_ASSIGNMENT);
